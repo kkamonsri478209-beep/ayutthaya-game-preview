@@ -1,5 +1,5 @@
 name: Deploy isolated Ayutthaya game preview
-# Redeploy corrected ending typography and medal spacing
+# Redeploy ending typography inside parchment, away from medal
 on:
   workflow_dispatch:
   push:
