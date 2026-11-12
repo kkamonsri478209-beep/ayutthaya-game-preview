@@ -1,5 +1,5 @@
 name: Deploy isolated Ayutthaya game preview
-# Refresh preview from performance-asset-loading-20261112 after ending layout fix
+# Publish standalone ending preview page without replaying the game
 on:
   workflow_dispatch:
   push:
