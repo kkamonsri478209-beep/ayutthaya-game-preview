@@ -55,3 +55,5 @@ jobs:
 # Publish isolated background-medal comparison with cache-busted assets
 
 # Redeploy teacher preview using uploaded stage9_result_background_v2.png
+
+# Publish ending without duplicate medal image element
