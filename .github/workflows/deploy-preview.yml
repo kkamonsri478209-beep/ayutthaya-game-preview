@@ -51,3 +51,5 @@ jobs:
 # Redeploy teacher stage jump menu on isolated preview
 
 # Redeploy adjusted medal overlay for teacher review
+
+# Publish isolated background-medal comparison with cache-busted assets
