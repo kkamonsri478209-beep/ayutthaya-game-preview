@@ -1,0 +1,42 @@
+name: Deploy isolated Ayutthaya game preview
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/deploy-preview.yml'
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages-preview
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the test branch from the original public repository
+        run: |
+          git clone --depth 1 --branch performance-asset-loading-20261112 https://github.com/kkamonsri478209-beep/ayutthaya-game-development.git source
+      - name: Check JavaScript syntax and prepare site
+        run: |
+          cd source
+          test -f index.html
+          for file in js/*.js; do node --check "$file"; done
+          rm -rf .git .github
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+      - name: Upload game website
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: source
+      - name: Deploy preview website
+        id: deployment
+        uses: actions/deploy-pages@v4
