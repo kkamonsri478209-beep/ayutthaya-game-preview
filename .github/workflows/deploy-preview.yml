@@ -41,3 +41,5 @@ jobs:
       - name: Deploy preview website
         id: deployment
         uses: actions/deploy-pages@v4
+
+# Refresh preview after medal alignment adjustment
