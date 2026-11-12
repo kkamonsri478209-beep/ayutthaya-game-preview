@@ -1,5 +1,5 @@
 name: Deploy isolated Ayutthaya game preview
-# Publish standalone ending preview page without replaying the game
+# Redeploy corrected ending typography and medal spacing
 on:
   workflow_dispatch:
   push:
